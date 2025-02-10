@@ -8,23 +8,19 @@ import android.util.AttributeSet;
 import android.view.SurfaceView;
 
 
-public class RaindropView extends SurfaceView {
-
-    Paint blue = new Paint();
-
+public class RaindropView extends SurfaceView
+{
     public RaindropView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setWillNotDraw(false);
-
-        this.blue.setColor(0xFF0000FF);
-        this.blue.setStyle(Paint.Style.FILL);
-
     }
 
     @Override
-    public void onDraw(Canvas canvas)
+    public void onDraw(Canvas _canvas)
     {
-        canvas.drawOval(800.0f, 400.0f, 450.0f, 820.0f, this.blue);
+        Raindrop rain = new Raindrop();
+        rain.placement(_canvas);
+
     }
 }
 
