@@ -1,5 +1,7 @@
 /**
  * @author Alexander Leah - 2/11/2025
+ * This class acts to construct the individual rain drops with all of the individual attributes
+ * a raindrop has, such as the coordinates and the random color
  */
 package edu.up.cs301_raindrop_hw;
 

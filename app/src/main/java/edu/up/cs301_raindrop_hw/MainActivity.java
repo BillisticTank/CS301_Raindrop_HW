@@ -1,5 +1,6 @@
 /**
  * @author Alexander Leah - 2/11/2025
+ * this class is the main activity that runs everything on the android device
  */
 package edu.up.cs301_raindrop_hw;
 

@@ -1,5 +1,7 @@
 /**
  * @author Alexander Leah - 2/11/2025
+ * This class acts as the actual surface that the raindrops are drawn on, acting as
+ * the "canvas" so to speak.
  */
 
 package edu.up.cs301_raindrop_hw;
@@ -22,9 +24,11 @@ public class RaindropView extends SurfaceView
     Random amount = new Random();
 
     /**
+     * random number between 6 and 12
+     */
+    int rainDropAmount = amount.nextInt(7) + 6;
+    /**
      * This contructer allows drawing to happen
-     * @param context
-     * @param attrs
      */
     public RaindropView(Context context, AttributeSet attrs)
     {
@@ -44,13 +48,11 @@ public class RaindropView extends SurfaceView
     @Override
     public void onDraw(Canvas _canvas)
     {
-        for(int i = 0; i < amount.nextInt(12) + 6; i++)
+        for(int i = 0; i < rainDropAmount; i++)
         {
             Raindrop rain = new Raindrop();
             rain.placement(_canvas);
         }
-        
-
     }
 }
 
