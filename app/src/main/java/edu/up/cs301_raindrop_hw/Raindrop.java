@@ -1,3 +1,6 @@
+/**
+ * @author Alexander Leah - 2/11/2025
+ */
 package edu.up.cs301_raindrop_hw;
 
 import android.graphics.Canvas;

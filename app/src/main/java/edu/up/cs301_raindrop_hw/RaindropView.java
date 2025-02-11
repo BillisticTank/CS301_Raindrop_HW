@@ -1,7 +1,10 @@
+/**
+ * @author Alexander Leah - 2/11/2025
+ */
+
 package edu.up.cs301_raindrop_hw;
 
 import android.content.Context;
-
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,6 +12,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 import java.util.Random;
+
 
 public class RaindropView extends SurfaceView
 {

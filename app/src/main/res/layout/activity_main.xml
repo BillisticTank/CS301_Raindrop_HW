@@ -15,7 +15,7 @@
         <edu.up.cs301_raindrop_hw.RaindropView
             android:id="@+id/surfaceView"
             android:layout_width="match_parent"
-            android:layout_height="800dp"
+            android:layout_height="match_parent"
             android:layout_weight="5" />
 
         <LinearLayout
