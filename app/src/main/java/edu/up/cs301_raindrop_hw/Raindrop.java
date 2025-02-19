@@ -27,6 +27,14 @@ public class Raindrop
     //new paint object for making each circle have a unique color
     protected Paint uniquePaint;
 
+    // red variable between 0 and 256 for red colour value
+    private int red = randomness.nextInt(256);
+
+    // green variable between 0 and 256 for green colour value
+    private int green = randomness.nextInt(256);
+
+    // blue variable between 0 and 256 for blue colour value
+    private int blue = randomness.nextInt(256);
     /** defualt constructer for the Raindrop(each individual circle drawn)
      * this contructer calls the random position and color methods to meet random position
      * and unique color requirments
@@ -44,7 +52,7 @@ public class Raindrop
      */
     public void randomPaint()
     {
-        int _randomPaint = Color.rgb(randomness.nextInt(256),randomness.nextInt(256),randomness.nextInt(256));
+        int _randomPaint = Color.rgb(red,green,blue);
 
         uniquePaint = new Paint();
         uniquePaint.setColor(_randomPaint);
@@ -71,6 +79,54 @@ public class Raindrop
     public void placement(Canvas canvas)
     {
         canvas.drawCircle(xPos, yPos, rainDropSize, uniquePaint);
+    }
+
+    public int getxPos()
+    {
+        return xPos;
+    }
+
+    public int getyPos()
+    {
+        return yPos;
+    }
+
+    //this method acts as the bounds detection for other raindrops, it uses the pythogorean thoerum
+    //to find out if the raindrop and main raindrop are within 60 data pixels of each other, if they are
+    //the method returns true, if not, the method returns false.
+    public boolean bounds(MainRaindrop bounder)
+    {
+        double mainx = bounder.getxPos();
+        double mainy = bounder.getyPos();
+
+        int math = (int) Math.sqrt( (Math.pow((xPos - mainx), 2)) + (Math.pow((yPos - mainy), 2)) );
+
+        if(math < 60)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    //getter method for the red colour instance variable
+    public int getRed()
+    {
+        return red;
+    }
+
+    //getter method for the green colour instance variable
+    public int getGreen()
+    {
+        return green;
+    }
+
+    //getter method for the blue colour instance variable
+    public int getBlue()
+    {
+        return blue;
     }
 
 }
